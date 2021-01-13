@@ -1,0 +1,54 @@
+@import "./variables.scss";
+
+#header{background: $white; border-bottom: solid 1px $bc1-lighter;
+	// Top Main Navigation
+	#main-nav{
+		> ul > li{
+			> a{color: $black; padding: 0 20px; display: block; font-weight: $bold; height: $header-height; line-height: $header-height; text-decoration: none; position: relative; overflow: hidden;
+				&:before{content: ""; display: block; background: $basecolor1; margin-left: -12px;
+					@include position(absolute, null null -2px 50%);
+					@include size(24px, 2px);
+					@include transition($duration-2)
+				}
+				&.active, &:hover{color: $basecolor1;
+					&:before{bottom: 0;}
+				}
+			}
+		}
+	}
+
+	// Top Profile Right side
+	.profile-right-menu-wrap{
+		.basic-info{
+			.thumb{ @include flexWidth(38px); 
+				img{@include size(38px);
+					@include border-radius($circle-radius);
+				}
+			}
+			.profile-info{padding-left: 10px; position: relative; 
+				@include flexWidth(220px);
+				
+				.fa-icon{height: 100%;
+					@include position(absolute, 0 12px null null);
+				}
+			}
+		}
+	}
+}
+
+.heading-section{margin: 15px 0 10px;
+	.color-definitions{background: $white; @include box-shadow(0, 1px, 5px, $bc1-lighter); padding: 10px;
+		@include border-radius($base-border-radius);
+		li{@include size(24px); margin: 6px; border: solid 2px $white;
+			@include border-radius(100%);
+			@include box-shadow(0, 0, 3px, $bc1-light);
+			&.no-show{background: $warning;}
+			&.waiting{background: $info;}
+			&.success{background: $success;}
+			&.scheduled{background: $scheduled;}
+		}
+	}
+}
+/*===================================================================
+	Header - [/end]
+===================================================================*/

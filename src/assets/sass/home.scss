@@ -1,0 +1,26 @@
+@import "./variables.scss";
+$cellSize:98px;
+.calendar-wrap{padding-left: 70px; position: relative;
+	.time-list{width: 70px;
+		@include position(absolute, $cellSize null null 0);
+		.time-block{ height: $cellSize; }
+	}
+
+	.week-days-list{border-bottom: solid 1px $bc1-lighter; border-top: solid 1px $bc1-lighter;
+		.cell{ height: $cellSize; border-right: solid 1px; border-bottom: solid 1px; border-color: $bc1-lighter; margin: 0; position: relative;
+			&:not(.week-day) .day-time{display: none;}
+			.event-box{z-index:2; padding: 3px; font-size: $bfsize-xs;
+				@include size(100%, $cellSize*2);
+				@include position(absolute, 0 null null 0);
+				.event-box-inner{ background: $scheduled; height: ($cellSize*2)-7; padding: 14px;
+					@include border-radius(4px);
+				}
+			}
+
+			&.status-no-show .event-box-inner{background: $warning;}
+			&.status-waiting .event-box-inner{background: $info;}
+			&.status-success .event-box-inner{background: $success;}
+			// &.status-no-show .event-box-inner{background: $scheduled;}
+		}
+	}
+}
