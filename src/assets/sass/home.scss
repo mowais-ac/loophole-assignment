@@ -1,6 +1,17 @@
 @import "./variables.scss";
 $cellSize:98px;
 .calendar-wrap{padding-left: 70px; position: relative;
+	.slide-timeline{padding-left: 40px;
+		@include position(absolute, 41% null null 0);
+		@include size(100%, 1px);
+		z-index: 1000;
+		.time-line-inner{ height: 1px; background: $basecolor1;}
+		&:before{content:""; display: block; border: solid 2px $basecolor1; background: $white;
+			@include border-radius(100%);
+			@include size(10px);
+			@include transform(translate(-2px, 6px));
+		}
+	}
 	.time-list{width: 70px;
 		@include position(absolute, $cellSize null null 0);
 		.time-block{ height: $cellSize; }

@@ -74,6 +74,9 @@ class Home extends React.Component {
                 <HeadingArea/>
                 <Container fluid className={'nopadding'}>
                     <div className="calendar-wrap bg-white">
+                        <div className="slide-timeline">
+                            <div className="time-line-inner"></div>
+                        </div>
                         {/* Week days list */}
                         <div className="time-list">
                             {weekdayNames[0][0].timeEvents.map((time) => {
