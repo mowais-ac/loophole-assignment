@@ -1,5 +1,3 @@
-# react-redux-webpack-sass-ssr
-
 ## How to install & run on localhost?
 To run in localhost please open your terminal, go the project folder and run `npm install` then run `npm run start:dev`, after successful compilation you will able to open with `http://localhost:3000`
 
